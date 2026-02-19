@@ -1,5 +1,7 @@
 const { test, expect, devices } = require("@playwright/test");
 const {
+  LOGIN_URL,
+  EMAIL,
   initHelpers,
   showInstruction,
   hideInstruction,
@@ -20,7 +22,7 @@ test.describe("Wachtwoord vergeten (Mobile)", () => {
     const startTime = Date.now(); // Start timer immediately — matches video recording start
 
     // Navigate to login page (not logged in)
-    await page.goto("https://test.golfer.intogolf.nl/#/login");
+    await page.goto(LOGIN_URL);
 
     // Wait for login page to fully load
     const wachtwoordVergetenLink = page.getByText("Wachtwoord vergeten", {
@@ -57,7 +59,7 @@ test.describe("Wachtwoord vergeten (Mobile)", () => {
 
     const emailField = page.locator('input[type="text"]').first();
     await tapElement(page, emailField);
-    await emailField.fill("edwin+test@intogolf.nl");
+    await emailField.fill(EMAIL);
     await page.waitForTimeout(800);
 
     const verstuurBtn = page.getByRole("button", { name: "Verstuur" });

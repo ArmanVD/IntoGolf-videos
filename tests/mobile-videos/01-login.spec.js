@@ -1,5 +1,8 @@
 const { test, expect, devices } = require("@playwright/test");
 const {
+  LOGIN_URL,
+  EMAIL,
+  PASSWORD,
   initHelpers,
   showInstruction,
   hideInstruction,
@@ -19,7 +22,7 @@ test.describe("Inloggen (Mobile)", () => {
   test("should demonstrate login flow", async ({ page }) => {
     const startTime = Date.now(); // Start timer immediately — matches video recording start
 
-    await page.goto("https://test.golfer.intogolf.nl/#/login");
+    await page.goto(LOGIN_URL);
 
     // Wait for page to be fully loaded, then pause 1s before starting
     const loginButton = page.getByRole("button", { name: "Login" });
@@ -39,12 +42,12 @@ test.describe("Inloggen (Mobile)", () => {
 
     const emailField = page.locator('input[type="text"]');
     await tapElement(page, emailField);
-    await emailField.fill("edwin+test@intogolf.nl");
+    await emailField.fill(EMAIL);
     await page.waitForTimeout(800);
 
     const passwordField = page.locator('input[type="password"]');
     await tapElement(page, passwordField);
-    await passwordField.fill("Test543@!");
+    await passwordField.fill(PASSWORD);
     await page.waitForTimeout(1500);
 
     // Clip 2: Tap login button

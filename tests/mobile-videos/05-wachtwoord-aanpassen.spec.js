@@ -96,7 +96,7 @@ test.describe("Wachtwoord aanpassen (Mobile)", () => {
       exact: true,
     });
     await tapElement(page, newPasswordField);
-    await newPasswordField.fill("NewTest543@!");
+    await newPasswordField.fill("NieuwWachtwoord1@");
     await page.waitForTimeout(800);
 
     // Clip 6: Fill confirm field — mention opslaan but do NOT click it
@@ -112,7 +112,7 @@ test.describe("Wachtwoord aanpassen (Mobile)", () => {
       name: "Wachtwoord controle",
     });
     await tapElement(page, confirmField);
-    await confirmField.fill("NewTest543@!");
+    await confirmField.fill("NieuwWachtwoord1@");
     await page.waitForTimeout(1500); // Save button becomes active
 
     // Clip 7: Success — show with save button active, but do NOT click save

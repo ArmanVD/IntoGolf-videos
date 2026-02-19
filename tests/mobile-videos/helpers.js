@@ -2,8 +2,16 @@
  * Shared helpers for IntoGolf mobile instruction videos.
  * Import in each test: const { ... } = require('./helpers');
  *
- * Vul hieronder uw club-URL, e-mailadres en wachtwoord in (zie de login functie onderaan).
+ * Vul hieronder uw clubgegevens in — dit is de enige plek waar u iets hoeft aan te passen.
  */
+
+// ─── Club configuration ────────────────────────────────────────────────────
+const LOGIN_URL = "https://UW-CLUB.golfer.intogolf.nl/#/login"; // ← pas aan
+const EMAIL     = "uw@email.com";                                // ← pas aan
+const PASSWORD  = "UwWachtwoord";                                // ← pas aan
+// ──────────────────────────────────────────────────────────────────────────
+
+const BASE_URL = LOGIN_URL.replace("/#/login", "");
 
 /**
  * Inject CSS styles for instruction overlay and tap indicators.
@@ -227,19 +235,21 @@ function logTimestamp(startTime, clipNumber, label) {
 
 /**
  * Standard login flow (not recorded as a step).
- * ─────────────────────────────────────────────
- * Fill in your club's URL, email, and password below.
  */
 async function login(page) {
-  await page.goto("https://UW-CLUB.golfer.intogolf.nl/#/login"); // ← pas aan
-  await page.locator('input[type="text"]').fill("uw@email.com");  // ← pas aan
-  await page.locator('input[type="password"]').fill("UwWachtwoord"); // ← pas aan
+  await page.goto(LOGIN_URL);
+  await page.locator('input[type="text"]').fill(EMAIL);
+  await page.locator('input[type="password"]').fill(PASSWORD);
   await page.getByRole("button", { name: "Login" }).click();
   await page.waitForURL(/.*#\/(?!login).*/);
   await page.waitForTimeout(1000);
 }
 
 module.exports = {
+  LOGIN_URL,
+  EMAIL,
+  PASSWORD,
+  BASE_URL,
   initHelpers,
   showInstruction,
   hideInstruction,

@@ -1,5 +1,6 @@
 const { test, expect, devices } = require("@playwright/test");
 const {
+  BASE_URL,
   initHelpers,
   showInstruction,
   hideInstruction,
@@ -29,7 +30,7 @@ test.describe("Wedstrijd uitschrijven (Mobile)", () => {
     await login(page);
 
     // Silent pre-enrollment: enroll in first available match so we have one to unenroll from
-    await page.goto("https://test.golfer.intogolf.nl/#/match");
+    await page.goto(`${BASE_URL}/#/match`);
     await page.waitForTimeout(1000);
 
     let enrolledMonth = MONTHS[new Date().getMonth()];
@@ -75,7 +76,7 @@ test.describe("Wedstrijd uitschrijven (Mobile)", () => {
     }
 
     // Navigate to dashboard to start recording
-    await page.goto("https://test.golfer.intogolf.nl/#/");
+    await page.goto(`${BASE_URL}/#/`);
     await page.getByText("Starttijden").first().waitFor({ state: "visible" });
     await initHelpers(page);
     await page.waitForTimeout(1000);

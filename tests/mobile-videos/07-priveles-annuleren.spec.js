@@ -1,5 +1,6 @@
 const { test, expect, devices } = require("@playwright/test");
 const {
+  BASE_URL,
   initHelpers,
   showInstruction,
   hideInstruction,
@@ -24,7 +25,7 @@ test.describe("Privéles annuleren (Mobile)", () => {
     await login(page);
 
     // Silent pre-booking: book a lesson 3 days ahead to ensure it's always >6h in the future
-    await page.goto("https://test.golfer.intogolf.nl/#/lessons");
+    await page.goto(`${BASE_URL}/#/lessons`);
     await page.getByRole("button", { name: "Priveles" }).waitFor({ state: "visible" });
     await page.getByRole("button", { name: "Priveles" }).click();
     await page.waitForTimeout(1000);
@@ -39,7 +40,7 @@ test.describe("Privéles annuleren (Mobile)", () => {
     await page.waitForTimeout(2000);
 
     // Navigate back to dashboard to start the recorded flow
-    await page.goto("https://test.golfer.intogolf.nl/#/");
+    await page.goto(`${BASE_URL}/#/`);
     await page.getByText("Starttijden").first().waitFor({ state: "visible" });
     await initHelpers(page);
     await page.waitForTimeout(1000);
