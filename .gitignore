@@ -9,7 +9,8 @@ playwright-report/
 tests/.enrolled-match.json
 
 # Video output (re-generate by running the tests)
-/mobile-videos/
+/mobile-videos/*
+!/mobile-videos/.gitkeep
 
 # OS & editor
 .DS_Store

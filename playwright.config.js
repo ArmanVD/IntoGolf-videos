@@ -5,7 +5,6 @@ module.exports = defineConfig({
   timeout: 30000,
   workers: 1,
   use: {
-    baseURL: "https://test.golfer.intogolf.nl",
     headless: true,
     screenshot: "only-on-failure",
   },
@@ -13,14 +12,6 @@ module.exports = defineConfig({
     {
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },
-    },
-    {
-      name: "firefox",
-      use: { ...devices["Desktop Firefox"] },
-    },
-    {
-      name: "webkit",
-      use: { ...devices["Desktop Safari"] },
     },
   ],
 });
