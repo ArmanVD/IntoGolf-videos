@@ -38,14 +38,15 @@ $env:ELEVENLABS_API_KEY="uw_sleutel_hier"
 
 ### 3. Clubgegevens instellen
 
-Open `tests/mobile-videos/helpers.js` en pas deze 3 regels aan:
+Open `tests/mobile-videos/helpers.js` en pas deze 3 regels bovenaan het bestand aan:
 
 ```javascript
-async function login(page) {
-  await page.goto("https://UW-CLUB.golfer.intogolf.nl/#/login");  // ← uw club-URL
-  await page.locator('input[type="text"]').fill("uw@email.com");   // ← uw e-mailadres
-  await page.locator('input[type="password"]').fill("UwWachtwoord"); // ← uw wachtwoord
+const LOGIN_URL = "https://UW-CLUB.golfer.intogolf.nl/#/login"; // ← uw club-URL
+const EMAIL     = "uw@email.com";                                // ← uw e-mailadres
+const PASSWORD  = "UwWachtwoord";                                // ← uw wachtwoord
 ```
+
+> **Let op:** verander alleen de tekst tussen de aanhalingstekens `""`. Verwijder de aanhalingstekens zelf niet.
 
 > De app gebruikt automatisch de kleuren en huisstijl van uw club in de opname.
 

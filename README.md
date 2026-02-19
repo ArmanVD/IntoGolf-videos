@@ -12,7 +12,7 @@ Zie **[VIDEO-WORKFLOW-GUIDE.md](VIDEO-WORKFLOW-GUIDE.md)** voor de volledige han
 3. `npm install` en `npx playwright install chromium`
 4. Installeer FFmpeg (`brew install ffmpeg` op macOS)
 5. Maak een ElevenLabs API-sleutel aan en stel `ELEVENLABS_API_KEY` in
-6. Open `tests/mobile-videos/helpers.js` en vul uw club-URL, e-mailadres en wachtwoord in
+6. Open `tests/mobile-videos/helpers.js` en vul uw club-URL, e-mailadres en wachtwoord in (verander alleen de tekst tussen de aanhalingstekens `""`, verwijder de aanhalingstekens zelf niet)
 7. Installeer Claude Code in VSCode
 8. Zeg tegen Claude: *"Ik wil de login video."*
 
