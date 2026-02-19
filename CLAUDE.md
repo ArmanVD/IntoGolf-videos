@@ -4,7 +4,7 @@
 Playwright-testscripts voor het automatisch genereren van mobiele instructievideo's voor de IntoGolf golfer-app, inclusief Nederlandse gesproken tekst via ElevenLabs.
 
 ## Credentials & URL
-Credentials en club-URL worden ingesteld in `tests/mobile-videos/helpers.js` (kopieer van `helpers.template.js`).
+Credentials en club-URL worden ingesteld in `tests/mobile-videos/helpers.js`.
 
 ## Commands
 - **Run video test:** `npx playwright test tests/mobile-videos/<filename>.spec.js --project=chromium`

@@ -38,7 +38,7 @@ $env:ELEVENLABS_API_KEY="uw_sleutel_hier"
 
 ### 3. Clubgegevens instellen
 
-Na `npm install` wordt `tests/mobile-videos/helpers.js` automatisch aangemaakt. Open dit bestand en pas deze 3 regels aan:
+Open `tests/mobile-videos/helpers.js` en pas deze 3 regels aan:
 
 ```javascript
 async function login(page) {

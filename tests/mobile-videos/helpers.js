@@ -2,8 +2,7 @@
  * Shared helpers for IntoGolf mobile instruction videos.
  * Import in each test: const { ... } = require('./helpers');
  *
- * SETUP: Copy this file to helpers.js and fill in your club's credentials below.
- *   cp tests/mobile-videos/helpers.template.js tests/mobile-videos/helpers.js
+ * Vul hieronder uw club-URL, e-mailadres en wachtwoord in (zie de login functie onderaan).
  */
 
 /**
