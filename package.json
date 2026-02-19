@@ -7,20 +7,21 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "npx playwright test"
+    "test": "npx playwright test",
+    "postinstall": "node -e \"const fs=require('fs');const src='tests/mobile-videos/helpers.template.js';const dst='tests/mobile-videos/helpers.js';if(!fs.existsSync(dst)){fs.copyFileSync(src,dst);console.log('helpers.js aangemaakt vanuit helpers.template.js — vul uw clubgegevens in.');}else{console.log('helpers.js bestaat al — geen actie nodig.');}\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ArmanVD/Stage-IntoGolf.git"
+    "url": "git+https://github.com/ArmanVD/IntoGolf-videos.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/ArmanVD/Stage-IntoGolf/issues"
+    "url": "https://github.com/ArmanVD/IntoGolf-videos/issues"
   },
-  "homepage": "https://github.com/ArmanVD/Stage-IntoGolf#readme",
+  "homepage": "https://github.com/ArmanVD/IntoGolf-videos#readme",
   "devDependencies": {
     "@playwright/test": "^1.58.2"
   }
