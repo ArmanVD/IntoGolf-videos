@@ -1,0 +1,33 @@
+# IntoGolf Mobiele Instructievideo's
+
+Playwright-testscripts voor het automatisch genereren van mobiele instructievideo's voor de IntoGolf golfer-app.
+
+## Aan de slag
+
+Zie **[VIDEO-WORKFLOW-GUIDE.md](VIDEO-WORKFLOW-GUIDE.md)** voor de volledige handleiding.
+
+**Kort samengevat:**
+1. `npm install` en `npx playwright install chromium`
+2. Installeer FFmpeg (`brew install ffmpeg` op macOS)
+3. Maak een ElevenLabs API-sleutel aan en stel `ELEVENLABS_API_KEY` in
+4. Kopieer `tests/mobile-videos/helpers.template.js` naar `tests/mobile-videos/helpers.js` en vul uw clubgegevens in
+5. Installeer Claude Code in VSCode
+6. Zeg tegen Claude: *"Ik wil de login video."*
+
+## Beschikbare video's
+
+| Video | Onderwerp |
+|---|---|
+| 01 | Inloggen |
+| 02 | Starttijd boeken |
+| 03 | Wachtwoord vergeten |
+| 04 | Starttijd annuleren |
+| 05 | Wachtwoord aanpassen |
+| 06 | Privéles boeken |
+| 07 | Privéles annuleren |
+| 08 | Baankalender bekijken |
+| 09 | Baanstatus bekijken |
+| 10 | Wedstrijd inschrijven |
+| 11 | Wedstrijd uitschrijven |
+| 12 | Ledenboekje bekijken |
+| 13 | Uitloggen |

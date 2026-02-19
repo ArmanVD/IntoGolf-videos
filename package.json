@@ -1,0 +1,27 @@
+{
+  "name": "stage-intogolf",
+  "version": "1.0.0",
+  "description": "Yurrr",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArmanVD/Stage-IntoGolf.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ArmanVD/Stage-IntoGolf/issues"
+  },
+  "homepage": "https://github.com/ArmanVD/Stage-IntoGolf#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2"
+  }
+}

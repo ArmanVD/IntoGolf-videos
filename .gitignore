@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Playwright output
+test-results/
+playwright-report/
+
+# Shared test state
+tests/.enrolled-match.json
+
+# Credentials — use helpers.template.js as a reference instead
+tests/mobile-videos/helpers.js
+
+# Video output (re-generate by running the tests)
+/mobile-videos/
+
+# OS & editor
+.DS_Store
+.claude/
+
+# Playwright MCP logs
+.playwright-mcp/
+
+# Misc
+conversation-export.txt
+PROJECT-SUMMARY.md
+dagboek/
+documentatie/
