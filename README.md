@@ -33,3 +33,13 @@ Zie **[VIDEO-WORKFLOW-GUIDE.md](VIDEO-WORKFLOW-GUIDE.md)** voor de volledige han
 | 11 | Wedstrijd uitschrijven |
 | 12 | Ledenboekje bekijken |
 | 13 | Uitloggen |
+
+## Aandachtspunten per club
+
+**Video 12 — Ledenboekje:** het script zoekt op de letters `"ker"` en verwacht dat er een lid met een achternaam die daarmee begint in de ledenlijst staat. Als uw club geen leden heeft met een achternaam die begint op "ker", pas dan de zoekterm aan in `tests/mobile-videos/12-ledenboekje.spec.js`:
+
+```javascript
+await searchBox.pressSequentially("ker", { delay: 250 }); // ← pas aan naar een achternaam die wel voorkomt
+```
+
+Pas ook de regel daarna aan die op het specifieke lid klikt.
