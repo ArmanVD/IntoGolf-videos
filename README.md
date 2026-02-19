@@ -7,7 +7,7 @@ Playwright-testscripts voor het automatisch genereren van mobiele instructievide
 Zie **[VIDEO-WORKFLOW-GUIDE.md](VIDEO-WORKFLOW-GUIDE.md)** voor de volledige handleiding.
 
 **Kort samengevat:**
-1. Kloon de repository: `git clone https://github.com/ArmanVD/IntoGolf-videos.git`
+1. Clone de repository: `git clone https://github.com/ArmanVD/IntoGolf-videos.git`
 2. Open de map in VSCode: `code IntoGolf-videos`
 3. `npm install` en `npx playwright install chromium`
 4. Installeer FFmpeg (`brew install ffmpeg` op macOS)
