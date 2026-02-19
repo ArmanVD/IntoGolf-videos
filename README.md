@@ -7,12 +7,14 @@ Playwright-testscripts voor het automatisch genereren van mobiele instructievide
 Zie **[VIDEO-WORKFLOW-GUIDE.md](VIDEO-WORKFLOW-GUIDE.md)** voor de volledige handleiding.
 
 **Kort samengevat:**
-1. `npm install` en `npx playwright install chromium`
-2. Installeer FFmpeg (`brew install ffmpeg` op macOS)
-3. Maak een ElevenLabs API-sleutel aan en stel `ELEVENLABS_API_KEY` in
-4. Kopieer `tests/mobile-videos/helpers.template.js` naar `tests/mobile-videos/helpers.js` en vul uw clubgegevens in
-5. Installeer Claude Code in VSCode
-6. Zeg tegen Claude: *"Ik wil de login video."*
+1. Kloon de repository: `git clone https://github.com/ArmanVD/IntoGolf-videos.git`
+2. Open de map in VSCode: `code IntoGolf-videos`
+3. `npm install` en `npx playwright install chromium`
+4. Installeer FFmpeg (`brew install ffmpeg` op macOS)
+5. Maak een ElevenLabs API-sleutel aan en stel `ELEVENLABS_API_KEY` in
+6. Kopieer `tests/mobile-videos/helpers.template.js` naar `tests/mobile-videos/helpers.js` en vul uw clubgegevens in
+7. Installeer Claude Code in VSCode
+8. Zeg tegen Claude: *"Ik wil de login video."*
 
 ## Beschikbare video's
 
