@@ -81,7 +81,7 @@ test.describe("Ledenboekje bekijken (Mobile)", () => {
     logTimestamp(startTime, 4, "Selecteer lid");
     await page.waitForTimeout(2000);
 
-    const memberResult = page.getByText("Kerkhoven, Máirtín");
+    const memberResult = page.getByRole("listitem").first();
     await memberResult.waitFor({ state: "visible" });
     await tapElement(page, memberResult);
     await page.waitForTimeout(1500);
