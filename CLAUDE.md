@@ -3,13 +3,9 @@
 ## Project Overview
 End-to-end Playwright tests for the IntoGolf golfer web application.
 
-## Test Credentials
-- **Email:** edwin+test@intogolf.nl
-- **Password:** Test543@!
-- **User:** Edwin Kerkhoven
-
-## Base URL
-- **Test environment:** https://test.golfer.intogolf.nl
+## Credentials & URL
+Credentials and club URL are set in `tests/mobile-videos/helpers.js` (copy from `helpers.template.js`).
+The E2E tests in `tests/` use the same credentials via their `beforeEach` login blocks.
 
 ## Commands
 - **Run all tests:** `npx playwright test`
@@ -69,7 +65,7 @@ The app uses hash-based routing (`#/`).
 - Correct credentials redirect away from login page
 
 ### tests/dashboard.spec.js - Dashboard (4 tests)
-- Verify user name "Edwin Kerkhoven" is displayed
+- Verify logged-in user name is displayed
 - Verify all navigation menu items are visible (Starttijden, Wedstrijden, Baankalender, Meerronden, Berichten, Baanstatus, Handicap, NGF-Pas, Lessen, Ledenlijst, Profiel, Speelhistorie)
 - Navigate to Wedstrijden from dashboard, verify `#/match` URL
 - Navigate to Starttijden from dashboard, verify `#/reservations` URL
@@ -103,13 +99,13 @@ The app uses hash-based routing (`#/`).
 ### tests/handicap.spec.js - Handicap (3 tests)
 - Navigate to Handicap page, verify header
 - Verify Binnenland/Buitenland buttons and empty state "U heeft nog geen scorekaarten"
-- Fill scorecard form: click Binnenland, set date (yesterday) and time (10:00), search marker "Kerkhoven", select Máirtín Kerkhoven (NL37336652), select Baan (Noordwijkse) → Lus (18 holes) → Tee (geel heren), verify summary (Cr/Sr/Par: 72.8/137/72), cancel
-- **Note:** Cannot proceed past summary to Score entry — test user has no GSN, so the API returns 500
+- Fill scorecard form: click Binnenland, set date (yesterday) and time (10:00), search for a club member as marker, select a baan → lus → tee, verify summary (Cr/Sr/Par), cancel
+- **Note:** Cannot proceed past summary to Score entry — test account has no GSN, so the API returns 500
 
 ### tests/ledenlijst.spec.js - Member List (3 tests)
 - Navigate to Ledenlijst page (`#/members`), verify header and search box
-- Search for "Kerkhoven", verify results appear with "Kerkhoven, Máirtín"
-- Click on member "Kerkhoven, Máirtín", verify detail view (Relatie, name, Speelsterkte), click "Sluiten" to return
+- Search for a member by surname, verify results appear
+- Click on a member result, verify detail view (Relatie, name, Speelsterkte), click "Sluiten" to return
 
 ### tests/logout.spec.js - Logout (1 test)
 - Navigate to Profiel, click "Uitloggen", verify redirect to `#/login`
@@ -123,7 +119,7 @@ The app uses hash-based routing (`#/`).
 - **Note:** Test user lacks GSN, so full pass details cannot be tested
 
 ### tests/profile.spec.js - Profile (3 tests)
-- Navigate to Profiel, verify Naam tab with user details (Voornaam: Edwin, Achternaam: Kerkhoven)
+- Navigate to Profiel, verify Naam tab with logged-in user's details
 - Switch between tabs: Contact (verify email), Golf (verify speelsterkte field)
 - Change "Zichtbaarheid in ledenboekje" preference, click Opslaan, reload and verify persistence, then restore original value
 
@@ -237,7 +233,7 @@ Mobile-optimized instruction videos for key user flows, with Dutch voiceover and
 
 ### tests/ledenlijst-edge.spec.js - Search Edge Cases (4 tests)
 - Search with no results ("XYZNOTEXIST999") — no crash
-- Partial name search ("Kerk") — finds "Kerkhoven, Máirtín"
+- Partial name search — finds expected member
 - Special characters in search ("#@!$%") — no crash
 - Clear search after filling — resets without errors
 
@@ -299,4 +295,3 @@ Mobile-optimized instruction videos for key user flows, with Dutch voiceover and
 - WebKit starttijden booking test can be flaky due to Quasar loading overlay timing
 - Enroll tests skip when match enrollment deadline passes (server-side date dependency)
 - Starttijden edge tests (cancel dialog, reload persistence) skip when no reservations exist
-- "Kerkhoven, Edwin" was removed from member list — tests use "Kerkhoven, Máirtín" instead
