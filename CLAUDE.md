@@ -29,6 +29,7 @@ When the user asks for a video in Dutch (e.g. "Ik wil de login video" or "Maak d
 | uitloggen | 13-uitloggen.spec.js |
 | ngf kaart / ngf | 14-ngf-kaart.spec.js |
 | meerronden | 15-meerronden.spec.js |
+| facturen | 16-facturen.spec.js |
 
 ## Mobile Instruction Videos
 
@@ -119,3 +120,8 @@ When the user asks for a video in Dutch (e.g. "Ik wil de login video" or "Maak d
 - Open menu, navigate to Meerronden, tap first klassement, show tussenstand with horizontal scroll, then show birdie klassement with horizontal scroll
 - Instructions: "Wanneer u ingelogd bent, start u op het dashboard. Klik linksboven op het menu-icoontje om het menu te openen.", "Klik vervolgens op 'Meerronden'.", "U ziet nu een overzicht van alle beschikbare klassementen en groepen. Klik op het klassement of de groep waarvan u de stand wilt bekijken.", "Het bovenste overzicht toont de tussenstand van de competitie met het totale aantal behaalde punten per ronde.", "Het onderste overzicht is het birdie klassement. Hierin ziet u hoeveel eagles, birdies, pars, bogeys en dubbel bogeys iedere speler heeft gescoord."
 - **Note:** Clip 4 overlay at bottom, clip 5 overlay repositioned to top (`overlay.style.top = "28px"`); uses custom `scrollHorizontal` helper with ease-in-out cubic (2s right + 2s back) on DOM-ordered scrollable containers (index 0 = tussenstand, index 1 = birdie); page scrolls down between clip 4 and 5
+
+### tests/mobile-videos/16-facturen.spec.js (3 clips, ~2.2 MB)
+- Open menu, navigate to Facturen, show invoice list, tap first invoice to download
+- Instructions: "Wanneer u ingelogd bent, start u op het dashboard. Klik linksboven op het menu-icoontje om het menu te openen.", "Klik vervolgens op 'Facturen'.", "U ziet nu een overzicht van al uw facturen. Klik op de factuur die u wilt downloaden om deze te downloaden."
+- **Note:** Drawer item is "Facturen" (exact); uses `getByRole("listitem").first()` to tap first invoice
