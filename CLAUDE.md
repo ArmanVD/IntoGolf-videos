@@ -30,6 +30,7 @@ When the user asks for a video in Dutch (e.g. "Ik wil de login video" or "Maak d
 | ngf kaart / ngf | 14-ngf-kaart.spec.js |
 | meerronden | 15-meerronden.spec.js |
 | facturen | 16-facturen.spec.js |
+| berichten | 17-berichten.spec.js |
 
 ## Mobile Instruction Videos
 
@@ -125,3 +126,8 @@ When the user asks for a video in Dutch (e.g. "Ik wil de login video" or "Maak d
 - Open menu, navigate to Facturen, show invoice list, tap first invoice to download
 - Instructions: "Wanneer u ingelogd bent, start u op het dashboard. Klik linksboven op het menu-icoontje om het menu te openen.", "Klik vervolgens op 'Facturen'.", "U ziet nu een overzicht van al uw facturen. Klik op de factuur die u wilt downloaden om deze te downloaden."
 - **Note:** Drawer item is "Facturen" (exact); uses `getByRole("listitem").first()` to tap first invoice
+
+### tests/mobile-videos/17-berichten.spec.js (3 clips, ~2.1 MB)
+- Open menu, navigate to Berichten, show message list, tap first message if available
+- Instructions: "Wanneer u ingelogd bent, start u op het dashboard. Klik linksboven op het menu-icoontje om het menu te openen.", "Klik vervolgens op 'Berichten'.", "U ziet nu een lijst met berichten van uw club of vereniging. Klik op een bericht om deze te lezen. Als er geen berichten beschikbaar zijn, wordt dit aangegeven op het scherm."
+- **Note:** Drawer item is "Berichten" (exact); tapping first message is wrapped in try/catch — gracefully shows empty state if no messages available; drawer wait increased to 3500ms to ensure clip 1 TTS finishes before clip 2 starts

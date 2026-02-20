@@ -36,6 +36,7 @@ Zie **[VIDEO-WORKFLOW-GUIDE.md](VIDEO-WORKFLOW-GUIDE.md)** voor de volledige han
 | 14 | NGF kaart bekijken |
 | 15 | Meerronden bekijken |
 | 16 | Facturen bekijken |
+| 17 | Berichten bekijken |
 
 ## Aandachtspunten per club
 
