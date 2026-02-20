@@ -27,6 +27,7 @@ When the user asks for a video in Dutch (e.g. "Ik wil de login video" or "Maak d
 | wedstrijd uitschrijven | 11-wedstrijd-uitschrijven.spec.js |
 | ledenboekje / ledenlijst | 12-ledenboekje.spec.js |
 | uitloggen | 13-uitloggen.spec.js |
+| ngf kaart / ngf | 14-ngf-kaart.spec.js |
 
 ## Mobile Instruction Videos
 
@@ -107,3 +108,8 @@ When the user asks for a video in Dutch (e.g. "Ik wil de login video" or "Maak d
 - Open menu, navigate to Account, scroll to Uitloggen button, tap it, confirm redirect to login page
 - Instructions: "Wanneer u ingelogd bent, start u op het dashboard. Klik linksboven op het menu-icoontje om het menu te openen.", "Klik vervolgens op 'Account'.", "Om uit te loggen scrolt u naar beneden en klikt u op de 'Uitloggen'-knop.", "U bent nu succesvol uitgelogd."
 - **Note:** Drawer item is "Account" (page route is `#/profile`); clip 3 uses `window.scrollBy({ top: 500, behavior: "smooth" })` before tap; overlay repositioned to `bottom: 220px` for clip 3 only so it doesn't cover the Uitloggen button
+
+### tests/mobile-videos/14-ngf-kaart.spec.js (2 clips, ~2.0 MB)
+- Open menu, navigate to NGF, show NGF card
+- Instructions: "Wanneer u ingelogd bent, start u op het dashboard. Klik linksboven op het menu-icoontje om het menu te openen.", "Klik vervolgens op 'NGF' om uw NGF-kaart te tonen."
+- **Note:** View-only; drawer item is "NGF" (exact); TTS uses "N-G-F" for correct letter-by-letter pronunciation
