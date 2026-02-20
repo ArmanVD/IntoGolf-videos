@@ -91,6 +91,7 @@ Claude voert de test uit, neemt het scherm op, genereert de Nederlandse gesproke
 | "Ik wil de **ledenboekje** video" | 12 — Ledenboekje bekijken |
 | "Ik wil de **uitloggen** video" | 13 — Uitloggen |
 | "Ik wil de **ngf kaart** video" | 14 — NGF kaart bekijken |
+| "Ik wil de **meerronden** video" | 15 — Meerronden bekijken |
 
 De afgewerkte video verschijnt in de map `mobile-videos/`.
 
