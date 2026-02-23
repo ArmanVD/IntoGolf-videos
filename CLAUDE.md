@@ -31,6 +31,7 @@ When the user asks for a video in Dutch (e.g. "Ik wil de login video" or "Maak d
 | meerronden | 15-meerronden.spec.js |
 | facturen | 16-facturen.spec.js |
 | berichten | 17-berichten.spec.js |
+| scorekaart binnenland / scorekaart invullen | 18-scorekaart-binnenland.spec.js |
 
 ## Mobile Instruction Videos
 
@@ -131,3 +132,8 @@ When the user asks for a video in Dutch (e.g. "Ik wil de login video" or "Maak d
 - Open menu, navigate to Berichten, show message list, tap first message if available
 - Instructions: "Wanneer u ingelogd bent, start u op het dashboard. Klik linksboven op het menu-icoontje om het menu te openen.", "Klik vervolgens op 'Berichten'.", "U ziet nu een lijst met berichten van uw club of vereniging. Klik op een bericht om deze te lezen. Als er geen berichten beschikbaar zijn, wordt dit aangegeven op het scherm."
 - **Note:** Drawer item is "Berichten" (exact); tapping first message is wrapped in try/catch — gracefully shows empty state if no messages available; drawer wait increased to 3500ms to ensure clip 1 TTS finishes before clip 2 starts
+
+### tests/mobile-videos/18-scorekaart-binnenland.spec.js (10 clips, ~9.4 MB)
+- Login silently, open menu, navigate to Handicap, tap Binnenland tab, fill date/time/marker, tap Baan, select Noordwijkse from dropdown, tap Lus, select 1e 9 holes + blauw heren, review and click Score, enter scores per hole with +/- buttons, tap Opslaan
+- Instructions: "Wanneer u ingelogd bent, start u op het dashboard. Klik linksboven op het menu-icoontje om het menu te openen.", "Klik vervolgens op 'Handicap'.", "U ziet nu een overzicht van al uw resultaten. Bovenin kunt u kiezen tussen 'Binnenland' en 'Buitenland'. Voor het invullen van een binnenlandse scorekaart klikt u op 'Binnenland'.", "Vul vervolgens de datum en tijd van de gespeelde dag in. Voer de marker in door iemand op te zoeken of door direct het juiste GSN-nummer in te voeren.", "Geef vervolgens aan of het qualifying is en of het een wedstrijdkaart betreft. Als alles ingevuld is, klikt u op 'Baan'.", "Kies via de dropdown de gespeelde baan en klik vervolgens op 'Lus'.", "Klik op de gespeelde lus en geef de afslaanplek aan door op de juiste kleur te klikken.", "Controleer alle gegevens en klik op 'Score'.", "U komt nu op een scherm waar u per hole het aantal gespeelde slagen kunt invullen. Onderaan ziet u het aantal behaalde punten.", "Als alles klopt, klikt u op 'Opslaan' om de scorekaart op te slaan."
+- **Note:** Uses random date 1–5 days ago and random time 07:00–17:00 to avoid duplicate scorecard rejection; Binnenland tab found via JS evaluate filtering elements with "BINNENLAND" but not "BUITENLAND" text (smallest area match); Score button clicked via `page.mouse.click()` at exact coordinates (locator.click() unreliable); marker searched by typing "kerk" → selecting first result (NL67383954); score entry page detected by polling for "Binnenland kaart" text
