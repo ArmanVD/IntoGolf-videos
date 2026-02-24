@@ -1,5 +1,6 @@
 const { test, expect, devices } = require("@playwright/test");
 const {
+  BASE_URL,
   initHelpers,
   showInstruction,
   hideInstruction,
@@ -23,7 +24,27 @@ test.describe("Starttijd annuleren (Mobile)", () => {
     // Silent login — not recorded
     await login(page);
 
-    // Wait for dashboard to be ready, then pause 1s before starting
+    // Silent pre-booking: book a tee time 2 days ahead to ensure there's always something to cancel
+    await page.goto(`${BASE_URL}/#/reservations`);
+    await page.getByRole("button", { name: "Nieuwe starttijd" }).waitFor({ state: "visible" });
+    await page.getByRole("button", { name: "Nieuwe starttijd" }).click();
+    await page.waitForTimeout(1500);
+    const rightArrow = page.locator("text=chevron_right").first();
+    await rightArrow.click();
+    await page.waitForTimeout(800);
+    await rightArrow.click();
+    await page.waitForTimeout(1500);
+    const firstSlot = page.locator("text=/\\d{2}:\\d{2}/").first();
+    await firstSlot.click();
+    await page.waitForTimeout(1000);
+    const reserveerBtn = page.getByRole("button", { name: "Reserveer" });
+    if (await reserveerBtn.isVisible()) {
+      await reserveerBtn.click();
+      await page.waitForTimeout(2000);
+    }
+
+    // Navigate back to dashboard to start the recorded flow
+    await page.goto(`${BASE_URL}/#/`);
     await page.getByText("Starttijden").first().waitFor({ state: "visible" });
     await initHelpers(page);
     await page.waitForTimeout(1000);
