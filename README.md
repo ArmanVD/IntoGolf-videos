@@ -47,3 +47,9 @@ Zie **[VIDEO-WORKFLOW-GUIDE.md](VIDEO-WORKFLOW-GUIDE.md)** voor de volledige han
 ```javascript
 await searchBox.pressSequentially("ker", { delay: 250 }); // ← pas aan naar een achternaam die wel voorkomt
 ```
+
+**Video 18 — Scorekaart binnenland:** het script zoekt een marker op via de zoekterm `"kerk"` en klikt automatisch op het eerste resultaat. Als uw club geen leden heeft met een naam die begint op "kerk", pas dan de zoekterm aan in `tests/mobile-videos/18-scorekaart-binnenland.spec.js`:
+
+```javascript
+await markerSearch.pressSequentially("kerk", { delay: 250 }); // ← pas aan naar een naam die wel voorkomt
+```
