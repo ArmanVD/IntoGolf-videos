@@ -40,7 +40,7 @@ When the user asks for a video in Dutch (e.g. "Ik wil de login video" or "Maak d
 - **Resolution:** 1080×1920 (Full HD portrait)
 - **Device:** iPhone 13 emulation (390×844 viewport)
 - **Video codec:** H.264 High profile, CRF 18, preset slow, yuv420p
-- **Audio codec:** AAC 192 kbps
+- **Audio codec:** AAC 192 kbps stereo (-ac 2) — always use -ac 2 in final merge to ensure stereo output
 - **Voiceover:** ElevenLabs AI (Voice ID: 7qdUFMklKPaaAVMsBTBt, Dutch pronunciation, eleven_multilingual_v2 model, stability: 0.35, similarity_boost: 0.75)
 - **Instructions:** Direct action statements (no "Stap één/twee/drie" numbering), Dutch, concise
 - **Overlay:** Floating card, bottom 28px, 88% width, rounded corners (14px), blur background, box-shadow, 16px font, fade-in 0.3s, aria-hidden

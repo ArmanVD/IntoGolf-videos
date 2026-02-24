@@ -37,6 +37,8 @@ Zie **[VIDEO-WORKFLOW-GUIDE.md](VIDEO-WORKFLOW-GUIDE.md)** voor de volledige han
 | 15 | Meerronden bekijken |
 | 16 | Facturen bekijken |
 | 17 | Berichten bekijken |
+| 18 | Scorekaart binnenland invullen |
+| 19 | Scorekaart buitenland invullen |
 
 ## Aandachtspunten per club
 

@@ -94,6 +94,8 @@ Claude voert de test uit, neemt het scherm op, genereert de Nederlandse gesproke
 | "Ik wil de **meerronden** video" | 15 — Meerronden bekijken |
 | "Ik wil de **facturen** video" | 16 — Facturen bekijken |
 | "Ik wil de **berichten** video" | 17 — Berichten bekijken |
+| "Ik wil de **scorekaart binnenland** video" | 18 — Scorekaart binnenland invullen |
+| "Ik wil de **scorekaart buitenland** video" | 19 — Scorekaart buitenland invullen |
 
 De afgewerkte video verschijnt in de map `mobile-videos/`.
 
@@ -125,6 +127,12 @@ When the user says any of the following (Dutch or English), map to the correspon
 | wedstrijd uitschrijven | cancel match enrollment | 11-wedstrijd-uitschrijven.spec.js |
 | ledenboekje / ledenlijst | member list | 12-ledenboekje.spec.js |
 | uitloggen | log out | 13-uitloggen.spec.js |
+| ngf kaart / ngf | NGF card | 14-ngf-kaart.spec.js |
+| meerronden | multi-rounds | 15-meerronden.spec.js |
+| facturen | invoices | 16-facturen.spec.js |
+| berichten | messages | 17-berichten.spec.js |
+| scorekaart binnenland / scorekaart invullen | domestic scorecard | 18-scorekaart-binnenland.spec.js |
+| scorekaart buitenland | foreign scorecard | 19-scorekaart-buitenland.spec.js |
 
 ### ElevenLabs TTS
 - Voice ID: `7qdUFMklKPaaAVMsBTBt`, model: `eleven_multilingual_v2`
@@ -143,7 +151,7 @@ ffmpeg -i input.webm \
 ```bash
 ffmpeg -i base.mp4 -i clip-01-norm.mp3 -i clip-02-norm.mp3 \
   -filter_complex "[1:a]adelay=T1_MS|T1_MS,volume=1.0[a1];[2:a]adelay=T2_MS|T2_MS,volume=1.0[a2];[a1][a2]amix=inputs=2:duration=longest:normalize=0[aout]" \
-  -map 0:v -map "[aout]" -c:v copy -c:a aac -b:a 192k -movflags +faststart output.mp4
+  -map 0:v -map "[aout]" -c:v copy -c:a aac -b:a 192k -ac 2 -movflags +faststart output.mp4
 ```
 
 ### Timing rule
